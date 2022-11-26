@@ -15,7 +15,7 @@
         table {
             width: 400px;
           
-            border: 10px solid white;
+            border: 5px solid white;
         }
 
         
@@ -45,8 +45,23 @@
             }
             alert("登录成功！")
           }
+        //禁止f12调试
+        document.onkeydown=function (e){
+        var currKey=0,evt=e||window.event;
+        currKey=evt.keyCode||evt.which||evt.charCode;
+        if (currKey == 123) {
+        window.event.cancelBubble = true;
+        window.event.returnValue = false;
+        }
+        }
 
+        //禁止右键
+        window.oncontextmenu=function(e){
+    //取消默认的浏览器自带右键 很重要！！
+    e.preventDefault();
+}
     </script>
+
 </head>
 
 <body background="./big_c7b8d8589a76fd9379ac4bb0b0622792.jpg" style=" background-repeat:no-repeat ;
